@@ -1,8 +1,12 @@
 
 In order to run the python file, following libraries need to be installed:
-
-   1. numpy
-   2. matplolib
-   3. beautiful soup
-   4. tabulate
+   
+   1. python 3.7
+   2. numpy
+   3. matplolib
+   4. beautiful soup
+   5. tabulate
+   
+   
+   
    
