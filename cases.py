@@ -38,19 +38,36 @@ for row  in stats:
 y_pos =np.arange(len(objects))
 performance =[]
 s=0
+s1=0
+s2=0
+
 for row in stats:
 	performance.append(int(row[2]))
 	s=s+int(row[2])
+	if row[3]=='':
+		s1=s1+0
+	else:	
+		s1 = s1+ int(row[3])
+	if row[4]=='':
+		s2=s2+0
+	else:	
+		s2 = s2+int(row[4])
+	
+
 table = tabulate(stats ,headers =SHORT_HEADERS)
 print (table)
-print("Total Number of cases =",s)
+print()
+print("Total Number of positive cases =",s)
+print("Total Number of cured =",s1)
+print("Total Number of deaths =",s2)
+
 
 plt.barh(y_pos, (performance), align='center', alpha=0.5, 
                  color=(234/256.0, 128/256.0, 252/256.0), 
                  edgecolor=(106/256.0, 27/256.0, 154/256.0)) 
   
 plt.yticks(y_pos, objects) 
-plt.xlim(1,10000) 
+plt.xlim(1,max(performance)+1000) 
 plt.xlabel('Number of Cases') 
 plt.title('Corona Virus Cases') 
 plt.show() 
